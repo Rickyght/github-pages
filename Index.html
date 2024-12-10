@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Grade 7</h2>
+<p>လျှိုက်ဝက်codeကိုယူဖို့အောင်ပါlinkအစစ်စစ်သွားပါ:</p>
+<p>emilနေရာရောက်ပါက အောက်ပါတိုးင်ထည့်ပါ</p>
+
+<!-- Display the text to be copied -->
+<p id="copyText">test@example.com password123</p>
+
+<!-- Button to copy the text -->
+<button onclick="copyText()" class="copy-btn">Copy ယူပါ</button>
+
+<!-- Link -->
+<a href="https://www.w3schools.com">linkနိပ်ပါ</a>
+
+<!-- Style the page -->
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .copy-btn {
+        background-color: #4CAF50; /* Green background */
+        color: white;
+        padding: 15px 32px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .copy-btn:hover {
+        background-color: #45a049; /* Darker green on hover */
+        transform: scale(1.1); /* Slightly enlarge the button */
+    }
+
+    .copy-btn:active {
+        background-color: #3e8e41; /* Even darker green when clicked */
+        transform: scale(1); /* Return to normal size when clicked */
+    }
+
+    p {
+        font-size: 1.2em;
+        margin: 10px 0;
+    }
+
+    a {
+        font-size: 1.1em;
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<script>
+    // Function to copy text to clipboard
+    function copyText() {
+        // Get the text element
+        var text = document.getElementById("copyText").innerText;
+
+        // Create a temporary input element to copy the text
+        var input = document.createElement("input");
+        input.value = text;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand("copy");
+        document.body.removeChild(input);
+
+        // Notify the user that the text has been copied
+        alert("Text copied to clipboard: " + text);
+    }
+</script>
+
+</body>
+</html>
